@@ -1,0 +1,126 @@
+ body {
+          margin: 0;
+          padding: 0;
+          background-image: url(222.jpg);
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        } 
+        body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        z-index: -1;
+        }
+
+  #hh1 {
+            font-family: Fira Sans, sans-serif;
+            font-size: 40px;
+            color: #191970;
+            padding: 0px 0px 0px 50px;
+        }
+
+  #pp1 {
+            font-family: Fira Sans, sans-serif;
+            font-size: 20px;
+            color: #191970;
+            padding: 0px 0px 0px 50px;
+        }
+
+  #hh2 {
+            font-family: Fira Sans, sans-serif;
+            font-size: 25px;
+            color: #010B13;
+            padding: 10px 0px 0px 50px;
+            text-decoration: underline;
+        }
+
+  #pp2 {
+            font-family: Fira Sans, sans-serif;
+            font-size: 18px;
+            color: #010B13;
+            padding: 0px 0px 0px 50px;
+        }
+
+  #hh3 {
+            font-family: Fira Sans, sans-serif;
+            font-size: 22px;
+            color: #010B13;
+            padding: 10px 0px 0px 50px;
+            text-decoration: underline;
+        }
+
+  .ll1 {
+            font-family: Fira Sans, sans-serif;
+            font-size: 17px;
+            color: #010B13;
+            padding: 0px 0px 0px 50px;
+        }
+
+  #hh4 {
+            font-family: Fira Sans, sans-serif;
+            font-size: 20px;
+            color: #010B13;
+            padding: 10px 0px 0px 50px;
+            text-decoration: underline;
+        }
+
+  .ll2 {
+    list-style: none;
+    margin-bottom: 12px;
+    font-family: Arial, sans-serif;
+    padding: 3px 0px 0px 10px;
+        }
+
+  .ll2 strong 
+        {
+    font-weight: bold;
+    text-decoration: underline;
+    margin-right: 5px;
+        }
+
+ .ll2 a 
+        {
+    color: blue;
+    text-decoration: none;
+    font-weight: normal;
+        }
+
+ .ll2 a:hover 
+        {
+    text-decoration: underline;
+        }
+
+   #pp3 {
+            padding: 0px 50px 50px 50px;
+        }
+
+  #bb1 {
+            
+            padding: 0px 0px 0px 0px;
+            margin: 20px 0px 0px 50px;
+        }
+
+  #bb1 img {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            border-radius: 50%;
+        }
+
+   #bb1 {  
+           border: 2px solid #1034A6;
+           border-radius: 50%;
+        }
+        
+   #bb1:hover 
+        {
+        border-color: #002244;
+        box-shadow: 0 0 20px rgba(0, 34, 68, 0.5);
+        } 
