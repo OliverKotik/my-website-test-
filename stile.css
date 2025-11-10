@@ -1,126 +1,165 @@
- body {
-          margin: 0;
-          padding: 0;
-          background-image: url(222.jpg);
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-        } 
-        body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0.8);
-        z-index: -1;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  #hh1 {
-            font-family: Fira Sans, sans-serif;
-            font-size: 40px;
-            color: #191970;
-            padding: 0px 0px 0px 50px;
-        }
-
-  #pp1 {
-            font-family: Fira Sans, sans-serif;
-            font-size: 20px;
-            color: #191970;
-            padding: 0px 0px 0px 50px;
-        }
-
-  #hh2 {
-            font-family: Fira Sans, sans-serif;
-            font-size: 25px;
-            color: #010B13;
-            padding: 10px 0px 0px 50px;
-            text-decoration: underline;
-        }
-
-  #pp2 {
-            font-family: Fira Sans, sans-serif;
-            font-size: 18px;
-            color: #010B13;
-            padding: 0px 0px 0px 50px;
-        }
-
-  #hh3 {
-            font-family: Fira Sans, sans-serif;
-            font-size: 22px;
-            color: #010B13;
-            padding: 10px 0px 0px 50px;
-            text-decoration: underline;
-        }
-
-  .ll1 {
-            font-family: Fira Sans, sans-serif;
-            font-size: 17px;
-            color: #010B13;
-            padding: 0px 0px 0px 50px;
-        }
-
-  #hh4 {
-            font-family: Fira Sans, sans-serif;
-            font-size: 20px;
-            color: #010B13;
-            padding: 10px 0px 0px 50px;
-            text-decoration: underline;
-        }
-
-  .ll2 {
-    list-style: none;
-    margin-bottom: 12px;
+body {
     font-family: Arial, sans-serif;
-    padding: 1px 0px 0px 50px;
-        }
+    color: #000;
+    line-height: 1.6;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    min-height: 100vh;
+    position: relative;
+    font-size: 17px; /* ← базовый размер: +1px */
+}
 
-  .ll2 strong 
-        {
+/* Единственный фон — через ::before */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('222.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 20px 40px;
+}
+
+/* Аватар — 300×300 px, по левому краю */
+.avatar-link {
+    display: block;
+    width: 300px;
+    height: 300px;
+    margin: 30px 0 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.avatar-link:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* === ШРИФТ +1px === */
+.name {
+    font-size: 30px; /* было 28px */
+    margin: 10px 0 5px;
+    color: #191970;
+}
+
+.role {
+    font-size: 22px; /* было 18px */
+    margin-bottom: 30px;
     font-weight: bold;
-    text-decoration: underline;
-    margin-right: 5px;
-        }
+    color: #191970;
+}
 
- .ll2 a 
-        {
-    color: blue;
+h2 {
+    font-size: 25px; /* было 24px */
+    margin: 30px 0 15px;
+    color: #000;
+    text-decoration: underline;
+}
+
+/* Основной текст и навыки — +1px */
+p,
+.skills li {
+    font-size: 18px; /* было 17px */
+}
+
+/* === КОНТАКТЫ — БЕЗ ИЗМЕНЕНИЙ (остаётся 17px) === */
+.contacts h2 {
+    font-size: 24px; /* без +1px */
+}
+
+.contacts li {
+    font-size: 17px; /* ← как было */
+}
+
+/* Списки — общий стиль */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+    padding-left: 22px;
+    position: relative;
+}
+
+ul li::before {
+    content: '•';
+    color: #000;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+/* Ссылки — единый синий цвет */
+a {
+    color: #0000ee;
     text-decoration: none;
-    font-weight: normal;
-        }
+}
 
- .ll2 a:hover 
-        {
+a:hover {
     text-decoration: underline;
-        }
+}
 
-   #pp3 {
-            padding: 0px 50px 50px 50px;
-        }
+a:visited {
+    color: #0000ee;
+}
 
-  #bb1 {
-            
-            padding: 0px 0px 0px 0px;
-            margin: 20px 0px 0px 50px;
-        }
+/* Адаптивность — шрифты тоже +1px на мобильных */
+@media (max-width: 768px) {
+    .avatar-link {
+        width: 240px;
+        height: 240px;
+    }
+    .container {
+        padding: 15px;
+    }
+    body::before {
+        background-size: contain;
+        background-attachment: scroll;
+    }
+    .name { font-size: 25px; }    /* было 24px */
+    .role { font-size: 17px; }    /* было 16px */
+    h2 { font-size: 23px; }       /* было 22px */
+    p, .skills li { font-size: 17px; } /* было 16px */
+    /* контакты — без изменений */
+    .contacts h2 { font-size: 22px; }
+    .contacts li { font-size: 16px; } /* ← оставлено как было на мобилке */
+}
 
-  #bb1 img {
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-            border-radius: 50%;
-        }
-
-   #bb1 {  
-           border: 2px solid #1034A6;
-           border-radius: 50%;
-        }
-        
-   #bb1:hover 
-        {
-        border-color: #002244;
-        box-shadow: 0 0 20px rgba(0, 34, 68, 0.5);
-        } 
+@media (max-width: 480px) {
+    .avatar-link {
+        width: 200px;
+        height: 200px;
+    }
+    .name { font-size: 25px; }    /* было 24px → +1 */
+    .role { font-size: 17px; }    /* было 16px → +1 */
+    h2 { font-size: 23px; }       /* было 22px → +1 */
+    p, .skills li { font-size: 17px; } /* было 16px → +1 */
+    /* контакты — без +1 */
+    .contacts h2 { font-size: 22px; }
+    .contacts li { font-size: 16px; }
+}
